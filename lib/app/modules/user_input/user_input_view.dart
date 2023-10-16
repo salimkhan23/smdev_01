@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 import 'package:untitled/app/modules/user_input/user_input_controller.dart';
 import 'package:untitled/widgets/m_app_bar.dart';
 
-import '../home/home_view.dart';
-
 class UserInputView extends GetView<UserInputController> {
   const UserInputView({super.key});
 
@@ -74,11 +72,6 @@ class UserInputView extends GetView<UserInputController> {
               ElevatedButton(
                 onPressed: () {
                   controller.chackData();
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeView(),
-                      ));
                 },
                 child: Text('Submit'),
               ),

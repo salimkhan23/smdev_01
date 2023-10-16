@@ -18,11 +18,11 @@ class UserInputController extends GetxController {
           duration: Duration(
             seconds: 5,
           ));
-    } else if (textEditingController.text.contains("")) {
+    } else if (textEditingController.text.contains(" ")) {
       Get.snackbar('Input field', 'user name invalid',
           duration: Duration(seconds: 5));
     } else {
-      Get.to(HomeView());
+      Get.to(() => HomeView());
     }
   }
 }
