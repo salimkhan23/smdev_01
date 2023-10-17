@@ -5,7 +5,7 @@ class MAppImage extends StatelessWidget {
   final String image;
 
   const MAppImage(
-      {super.key, this.height = 250, this.width = 300, required this.image});
+      {super.key, this.height = 200, this.width = 250, required this.image});
 
   @override
   Widget build(BuildContext context) {

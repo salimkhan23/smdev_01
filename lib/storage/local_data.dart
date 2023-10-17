@@ -12,3 +12,18 @@ class LocalData {
     await box.write(userData, value);
   }
 }
+
+
+
+// class ListData {
+//   final box = GetStorage();
+//   final String userListData = 'userListData';
+
+//   getMGridView() async {
+//     return await box.read(userListData) ?? false;
+//   }
+
+//   setMGridView(bool value) async {
+//     await box.write(userListData, value);
+//   }
+// }
