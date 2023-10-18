@@ -20,7 +20,7 @@ class UserInputController extends GetxController {
       Get.snackbar('Input field', 'user name invalid',
           duration: Duration(seconds: 5));
     } else {
-      Get.to(() => HomeView());
+      Get.to(() => HomeView(), arguments: textEditingController.text);
     }
   }
 }

@@ -5,7 +5,7 @@ import 'package:untitled/app/modules/home/home_screen/home_controller.dart';
 import 'package:untitled/app/modules/home/home_widgets/m_grid_view.dart';
 import 'package:untitled/app/modules/home/home_widgets/m_list_view.dart';
 import 'package:untitled/app/modules/home/home_widgets/m_text.dart';
-import 'package:untitled/image_screen/home_image.dart';
+
 import 'package:untitled/widgets/m_app_bar.dart';
 
 import '../../../../widgets/m_app_home_image.dart';
@@ -58,18 +58,18 @@ class HomeView extends GetView<HomeController> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           MAppImage(
-                            image: MImagePath.main,
+                            image: controller.userImage.value,
                           ),
                           Column(
                             children: [
                               MText(
-                                text: 'Salim Khan',
+                                text: controller.userNmae.value,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
                               ),
                               SizedBox(height: 10),
                               MText(
-                                text: 'Flutter',
+                                text: controller.user.value,
                                 fontSize: 20,
                               ),
                             ],
@@ -79,7 +79,8 @@ class HomeView extends GetView<HomeController> {
                       SizedBox(height: 20),
                       MText(
                           text:
-                              'Always keep two words in mind Alhamdulillah and Astagfirullah ♥️⁣'),
+                              // 'Always keep two words in mind Alhamdulillah and Astagfirullah ♥️⁣'
+                              controller.userBoi.value),
                       SizedBox(
                         height: 50,
                       ),
@@ -99,25 +100,26 @@ class HomeView extends GetView<HomeController> {
                           InkWell(
                             child: IconButton(
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => MGridView(),
-                                    ));
+                                controller.visibilityChange();
                               },
-                              icon: Icon(Icons.grid_view),
+                              icon: controller.isClick.value
+                                  ? Icon(
+                                      Icons.list,
+                                      size: 30,
+                                    )
+                                  : Icon(
+                                      Icons.grid_view,
+                                      size: 25,
+                                    ),
                             ),
                           ),
                         ],
                       ),
                       SizedBox(height: 20),
 
-                      StreamBuilder<MGridView>(
-                          stream: null,
-                          initialData: MGridView(),
-                          builder: (context, snapshot) {
-                            return MListView();
-                          })
+                      Obx(() =>
+                          controller.isClick.value ? MGridView() : MListView()),
+
                       // MGridView(),
                       // MListView()
                     ],
