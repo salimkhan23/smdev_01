@@ -43,29 +43,6 @@ class UserInputView extends GetView<UserInputController> {
               SizedBox(
                 height: 30,
               ),
-              // TextFormField(
-              //   decoration: InputDecoration(
-              //     label: Text('Password'),
-              //     border: OutlineInputBorder(
-              //       borderSide: BorderSide(
-              //           color: Color.fromARGB(255, 156, 203, 241), width: 5),
-              //     ),
-              //     focusedBorder: OutlineInputBorder(
-              //       borderSide: BorderSide(
-              //           color: const Color.fromARGB(255, 161, 203, 238),
-              //           width: 5),
-              //     ),
-              //     enabledBorder: OutlineInputBorder(
-              //       borderSide: BorderSide(
-              //           color: const Color.fromARGB(255, 165, 207, 241),
-              //           width: 5),
-              //     ),
-              //     errorBorder: OutlineInputBorder(
-              //       borderSide: BorderSide(
-              //           color: Color.fromARGB(255, 243, 116, 57), width: 5),
-              //     ),
-              //   ),
-              // ),
               SizedBox(
                 height: 20,
               ),

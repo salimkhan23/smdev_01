@@ -32,8 +32,8 @@ class HomeController extends GetxController {
     var reposityData = await https.get(Uri.parse(url));
     if (reposityData.statusCode == 200) {
       var userData = json.decode(reposityData.body);
-      userNmae.value = userData['company'] ?? ' ';
-      user.value = userData['name'] ?? ' ';
+      userNmae.value = userData['name'] ?? ' ';
+      user.value = userData['company'] ?? ' ';
       userImage = userData['avatar_url'] ?? ' ';
       userBoi = userData['bio'] ?? ' ';
 
